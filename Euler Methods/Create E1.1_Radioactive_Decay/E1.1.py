@@ -47,6 +47,7 @@ plt.xlabel('Time (t)')
 plt.ylabel('Quantity (N)')
 plt.title('Radioactive Decay: Euler vs Exact Values')
 plt.legend()
+plt.savefig("radioactive_decay_euler_vs_exact.png", dpi=300)
 
 # Show plot of N(t)
 plt.show()
@@ -59,6 +60,10 @@ plt.xlabel('Time (t)')
 plt.ylabel('Error (|Exact - Euler|)')
 plt.title('Error between Exact Values and Euler\'s Method')
 plt.legend()
-
+plt.savefig("radioactive_decay_error.png", dpi=300)
 # Show error plot
 plt.show()
+
+from google.colab import files
+files.download("radioactive_decay_euler_vs_exact.png")
+files.download("radioactive_decay_error.png")
