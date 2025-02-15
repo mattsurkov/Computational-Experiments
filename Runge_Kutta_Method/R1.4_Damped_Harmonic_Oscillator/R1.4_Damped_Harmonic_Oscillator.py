@@ -44,6 +44,8 @@ def plot_results(t, x, v, b_label, axs, row):
     axs[row, 1].set_xlabel(r"$x$")
     axs[row, 1].set_ylabel(r"$v$")
     axs[row, 1].axis('equal')  # Ensure equal scaling on both axes for square shape
+    axs[row, 1].axhline(0, color='black', linewidth=0.5)  # Horizontal at y=0 
+    axs[row, 1].axvline(0, color='black', linewidth=0.5)  # Vertical at x=0 
 
 def main():
     # Define initial parameters
@@ -91,4 +93,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
