@@ -26,6 +26,9 @@ def phase_space(x, v):
     plt.axis('equal')  # Sets the axes to equal sizes
     plt.xlabel(r"$x$")  # Labels the x-axis
     plt.ylabel(r"$v$")  # Labels the y-axis
+    plt.title("Simple Pendulum Phase Space")
+    plt.axhline(0, color= 'black', linewidth=1)  # Horizontal at y=0
+    plt.axvline(0, color= 'black' , linewidth=1)    # Vertical at x=0
     filename = f'pendulum_phase_space.png'
     plt.savefig(filename, dpi=300)
     print(f"Saved plot as {filename}") # Text confirm
@@ -61,13 +64,14 @@ def main():
     x, v = result.y
     t = result.t
 
-    # plot position ad velocity as a function of time.
+    # plot position and velocity as a function of time.
     plt.plot(t, x, label=r"$x(t)$")
     plt.plot(t, v, label=r"$v(t)$")
     plt.title("Simple Harmonic Oscillator - Pendulum")
     plt.xlabel("Time")
+    plt.axhline(0, color='black', linewidth=1)  # Horizontal at y=0
     plt.ylabel("Position (x) and Velocity (v)")
-    plt.legend(loc=1)
+    plt.legend(loc=1) # upper right
 
     filename = f'pendulum.png'
     plt.savefig(filename, dpi=300)
